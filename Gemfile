@@ -7,10 +7,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'haml-rails'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'capybara'
 end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

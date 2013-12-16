@@ -1,16 +1,15 @@
 require 'spec_helper'
 
-describe Product do
-  let(:product) { FactoryGirl.create(:product) }
+describe "users product page" do
+  let!(:product) { FactoryGirl.create(:product) }
 
-  subject { item }
+  context "User visits the home page" do
+    it "name should be visible to the user on the home page" do
+      visit root_path
 
-  it { should respond_to(:name) }
-  it { should respond_to(:price) }
-  it { should respond_to(:description) }
-  it { should respond_to(:availability_date) }
-  it { should respond_to(:active_status) }
-  # it { should respond_to(:image) }
-  # it { should respond_to(:category) }
+      expect(page).to have_content "Product 1"
+      expect(page).to have_link "Product 1"
+    end
+  end
 
 end
