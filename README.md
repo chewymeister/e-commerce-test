@@ -14,7 +14,7 @@ simply run to install all dependencies:
 ### Integration Tests
 Integration tests can be run by running the following command
 
-    bundle exec rspec spec/integration
+    bundle exec rspec spec/features
 
 ### Unit Tests
 Unit tests can be run by running the following command
