@@ -1,6 +1,5 @@
 - @products.each do |product|
-  - if product.active_status
-    = product.active_status.inspect
+  - if product.display_on_homepage
     %h3 
       .product-name
         = link_to product.name, product
@@ -8,6 +7,3 @@
         = "£#{product.price}"
       .description
         = product.description
-
-%span
-  = @products.count

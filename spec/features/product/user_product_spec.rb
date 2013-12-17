@@ -18,7 +18,6 @@ describe "users product page" do
     it "a product that has been marked as not appearing on the homepage should not be visible" do
       hidden_product = FactoryGirl.create(:hidden_product)
       visit root_path
-      # raise page.html
 
       expect(Product.find(hidden_product)).to be_valid
       expect(page).to_not have_link "Hidden product"
@@ -33,8 +32,6 @@ describe "users product page" do
     end
   end
 
-  after do
-    FactoryGirl.reload
-  end
+  
 
 end
