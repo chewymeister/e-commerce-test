@@ -14,6 +14,15 @@ describe "users product page" do
 
       expect(current_path).to eq product_path(product)
     end
+
+    it "a product that has been marked as not appearing on the homepage should not be visible" do
+      hidden_product = FactoryGirl.create(:hidden_product)
+      visit root_path
+      # raise page.html
+
+      expect(Product.find(hidden_product)).to be_valid
+      expect(page).to_not have_link "Hidden product"
+    end
   end
 
   context "When the user visits the show page" do

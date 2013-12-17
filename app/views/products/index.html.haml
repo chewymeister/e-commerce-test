@@ -1,8 +1,13 @@
 - @products.each do |product|
-  %h3 
-    .product-name
-      = link_to product.name, product
-    .price
-      = "£#{product.price}"
-    .description
-      = product.description
+  - if product.active_status
+    = product.active_status.inspect
+    %h3 
+      .product-name
+        = link_to product.name, product
+      .price
+        = "£#{product.price}"
+      .description
+        = product.description
+
+%span
+  = @products.count
