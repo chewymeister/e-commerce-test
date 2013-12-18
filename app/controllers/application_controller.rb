@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :create_new_basket
   helper_method :current_basket
+  helper_method :parent_categories
 
   def create_new_basket
     session[:basket_id] ||= Basket.create.id
@@ -11,5 +12,9 @@ class ApplicationController < ActionController::Base
 
   def current_basket
     Basket.find(session[:basket_id])
+  end
+
+  def parent_categories
+    Category.where(:parent_id.nil?)
   end
 end

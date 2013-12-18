@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :product do
-    sequence(:name)               { |n| "Product #{n}" }
-    sequence(:price)              { |n| n + 0.55 }
-    sequence(:description)        { |n| "Product #{n} is great" }
+    sequence(:name)          { |n| "Product #{n}" }
+    sequence(:price)         { |n| n + 0.55 }
+    sequence(:description)   { |n| "Product #{n} is great" }
     availability_date DateTime.new(2013,1,1)
     active_status true
     display_on_homepage true
@@ -15,5 +15,10 @@ FactoryGirl.define do
     active_status true
     availability_date DateTime.new(2014,1,1)
     display_on_homepage false
+  end
+
+  factory :parent_category, class: Category do
+    sequence(:name)          { |n| "Parent #{n}" }
+    parent_id nil
   end
 end
