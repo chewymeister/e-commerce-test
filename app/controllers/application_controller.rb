@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :create_new_basket
   helper_method :current_basket
   helper_method :parent_categories
+  helper_method :child_categories
 
   def create_new_basket
     session[:basket_id] ||= Basket.create.id
@@ -16,5 +17,9 @@ class ApplicationController < ActionController::Base
 
   def parent_categories
     Category.where(:parent_id.nil?)
+  end
+
+  def child_categories
+    Category.where(!:parent_id.nil?)
   end
 end

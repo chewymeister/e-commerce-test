@@ -4,6 +4,8 @@
       = pluralize current_basket.count, 'item'
   .view_basket
     = link_to 'View basket', basket_path(current_basket)
+    
+= render 'layouts/sidebar'
 
 - @products.each do |product|
   - if product.display_on_homepage

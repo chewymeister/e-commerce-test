@@ -21,4 +21,9 @@ FactoryGirl.define do
     sequence(:name)          { |n| "Parent #{n}" }
     parent_id nil
   end
+
+  factory :child_category, class: Category do
+    sequence(:name)          { |n| "Child #{n}"  }
+    sequence(:parent_id)     { |n| n}
+  end
 end
