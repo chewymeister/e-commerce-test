@@ -6,6 +6,7 @@ EcommApp::Application.routes.draw do
   root 'products#index'
 
   resources :products
+  resources :baskets
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

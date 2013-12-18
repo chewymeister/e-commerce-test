@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217163507) do
+ActiveRecord::Schema.define(version: 20131218050123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "baskets", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -25,6 +30,9 @@ ActiveRecord::Schema.define(version: 20131217163507) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "display_on_homepage"
+    t.integer  "basket_id"
   end
+
+  add_index "products", ["basket_id"], name: "index_products_on_basket_id", using: :btree
 
 end
