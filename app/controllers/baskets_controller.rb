@@ -1,8 +1,8 @@
 class BasketsController < ApplicationController
   def update
-    session[:return_to] ||= request.referer
     @product = Product.find(params[:product_id])
     current_basket.products << @product
-    redirect_to session.delete(:return_to)
+
+    redirect_to root_path
   end
 end
