@@ -16,14 +16,4 @@ FactoryGirl.define do
     availability_date DateTime.new(2014,1,1)
     display_on_homepage false
   end
-
-  factory :parent_category, class: Category do
-    sequence(:name)          { |n| "Parent #{n}" }
-    parent_id nil
-  end
-
-  factory :child_category, class: Category do
-    sequence(:name)          { |n| "Child #{n}"  }
-    sequence(:parent_id)     { |n| n}
-  end
 end
