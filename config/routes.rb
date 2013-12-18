@@ -8,6 +8,8 @@ EcommApp::Application.routes.draw do
   resources :products
   resources :baskets
 
+  match '/delete_basket_products', to: 'baskets#destroy', via: 'delete'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

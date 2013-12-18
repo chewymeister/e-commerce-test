@@ -28,7 +28,6 @@ describe "users product page" do
     it "the details of the product should be displayed" do
       expect(page).to have_css '.product-name', text: 'Product 1'
       expect(page).to have_css '.price', text: '£1.55'
-      expect(page).to have_css '.description', text: 'Product 1 is great'
     end
   end
 end
