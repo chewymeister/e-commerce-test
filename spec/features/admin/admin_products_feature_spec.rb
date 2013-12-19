@@ -23,6 +23,27 @@ describe Product do
       expect(current_path).to eq admin_root_path
     end
   end
+
+  context "when a product has already been created" do
+    before { FactoryGirl.create(:product) }
+    it "it is displayed on the admin dashboard" do
+      visit admin_root_path
+      # raise page.html
+      expect(page).to have_link 'Product 1'
+    end
+
+    xit "the admin can delete the product" do
+
+    end
+
+    xit "the admin can update the product" do
+
+    end
+
+    xit "te admin can see the details of the product" do
+
+    end
+  end
 end 
 
 def sign_in_admin
