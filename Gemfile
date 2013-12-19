@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 group :test, :development do
   gem 'rspec-rails'
