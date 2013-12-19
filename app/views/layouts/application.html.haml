@@ -7,4 +7,11 @@
     = csrf_meta_tags
   %body
     = render 'layouts/header'
+    - if flash[:notice]
+      #notice= flash[:notice]
+    - if flash[:errors]
+      %p Sorry, there were the following problems with the form:
+      %ul#errors
+        - flash[:errors].each do |error|
+          %li= error
     = yield
